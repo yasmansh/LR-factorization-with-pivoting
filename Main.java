@@ -16,9 +16,9 @@ public class Main {
 
     public static void main(String[] args) {
         long startTime = System.nanoTime();
-        size = 300;// ThreadLocalRandom.current().nextInt(250, 600);
-        double[][] A =random(size,size);
-//        double[][] A =  subtract(multiply(random(size, size - 1), random(size - 1, size)), rI(-0.03, identity()));
+        size = ThreadLocalRandom.current().nextInt(10, 300);
+//        double[][] A =random(size,size);
+        double[][] A =  subtract(multiply(random(size, size - 1), random(size - 1, size)), rI(-0.03, identity()));
         Matrix = new double[size][size];
         copy(A, Matrix);
         P = identity();
@@ -45,7 +45,7 @@ public class Main {
         double[][] a = new double[numberOfRowa][numOfColumns];
         int min = ThreadLocalRandom.current().nextInt(-1000, 0),
                 max = ThreadLocalRandom.current().nextInt(0, 1000);
-//        System.out.println("min = " + min + "\t,  max = " + max);
+        System.out.println("min = " + min + "\t,  max = " + max);
         for (int i = 0; i < numberOfRowa; i++) {
             for (int j = 0; j < numOfColumns; j++) {
                 a[i][j] = ThreadLocalRandom.current().nextDouble(min, max);
